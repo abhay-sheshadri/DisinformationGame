@@ -104,6 +104,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 #menu {
   color:black
 }
+#ui-dialog-titlebar {
+    background-color: #f9f7f1;
+    min-height: 24px;
+}
+#ui-dialog-body {
+    background-color: #f9f7f1;
+}
 #story-caption {
   border-style: solid;
   border-color: black;
@@ -613,11 +620,12 @@ You have seen many people get rich off of crypto. You read some articles about $
 
 [[continue|CWeek 6]]
 
-&lt;&lt;run $money = $money - 3000&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="CWeek 6" tags="" position="363,4715" size="100,100">&lt;&lt;if $cult&gt;&gt;
-!!!Cult Ending
-
-You see an article about the Yeagerists, a group that claims to help the disenfranchised in society. You decide to go to a meeting they are holding the next day. You show up and slowly feel as though you can trust them. They ask for you to devote your mind and soul to their cause. You oblige.
-
+&lt;&lt;run $money = $money - 3000&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="CWeek 6" tags="" position="363,4715" size="100,100">&lt;div class=&quot;papername&quot;&gt;West Village Times&lt;/div&gt;
+&lt;div class=&quot;article&quot;&gt;
+&lt;&lt;if $cult&gt;&gt;
+&lt;div class=&quot;articleHeadline&quot;&gt;Cult Ending&lt;/div&gt;
+  &lt;div class=&quot;articleText&quot;&gt;You see an article about the Yeagerists, a group that claims to help the disenfranchised in society. You decide to go to a meeting they are holding the next day. You show up and slowly feel as though you can trust them. They ask for you to devote your mind and soul to their cause. You oblige. 
+  
 -1 year later-
 
 You&#39;re living in the country with the Yeagerists in anticipation of the chosen day. You are excited.
@@ -625,22 +633,27 @@ You&#39;re living in the country with the Yeagerists in anticipation of the chos
 -2 years later-
 
 The chosen day has finally come about. You take a drug that is promised to take you into another dimension, one where everyone is equal. You take it, and slowly start to lose feeling as you fade from consciousness. Glory to Yeagerstan.
+&lt;/div&gt;
 &lt;&lt;elseif $money &gt; 9000&gt;&gt;
-!!!Good Ending
+&lt;div class=&quot;articleHeadline&quot;&gt;Good Ending&lt;/div&gt;
+&lt;div class=&quot;articleText&quot;&gt;
+You’re getting your money up, not your funny up. You’ve made some bad decisions in the past, but you’ve learned how to manage your money well and live a happy life. You are grateful for the online resources that have guided you towards prosperity.
+&lt;/div&gt;
 
-You’re getting your money up, not your funny up. You’ve made some bad decisions in the past, but you’ve learned how to manage your money well and live a happy life. You are grateful for the online resources that have guided you towards prosperity. 
+
 
 &lt;&lt;elseif $money &gt; 0&gt;&gt;
-!!!True Ending
-
-You lost some money, but gained experience. You reflect on your decisions, and realize how much the media has had a negative effect on your life. Although your life isn’t the greatest, you are still happy that you were able to discern fact from fiction and prevent the media from ruining your life. 
+&lt;div class=&quot;articleHeadline&quot;&gt;True Ending&lt;/div&gt;
+  &lt;div class=&quot;articleText&quot;&gt;You lost some money, but gained experience. You reflect on your decisions, and realize how much the media has had a negative effect on your life. Although your life isn’t the greatest, you are still happy that you were able to discern fact from fiction and prevent the media from ruining your life. 
+&lt;/div&gt; 
 
 &lt;&lt;else&gt;&gt;
-!!!Bad Ending
-
-You’ve been led astray by everything in your life. It seems that everywhere you look, people are lying to you and trying to scam you. You curse those in power of the government and media, blaming them for your shortcomings. You don’t know who to trust or what to do. 
-You’re in debt and turn to petty theft to scrape by. Eventually, you’re caught, and are sentenced to three years in jail. Three years later, you’re released, but you still have nothing to your name. You return to petty theft, and you are caught once again. The cycle of poverty continues. We live in a society.
+&lt;div class=&quot;articleHeadline&quot;&gt;Bad Ending&lt;/div&gt;
+  &lt;div class=&quot;articleText&quot;&gt;You’ve been led astray by everything in your life. It seems that everywhere you look, people are lying to you and trying to scam you. You curse those in power of the government and media, blaming them for your shortcomings. You don’t know who to trust or what to do. 
+You’re in debt and turn to petty theft to scrape by. Eventually, you’re caught, and are sentenced to three years in jail. Three years later, you’re released, but you still have nothing to your name. You return to petty theft, and you are caught once again. The cycle of poverty continues. We live in a society. 
+&lt;/div&gt; 
 &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="52" name="progressbar" tags="widget" position="861,398" size="100,100">&lt;&lt;widget &quot;progressbar&quot;&gt;&gt;
 &lt;div class=&quot;barOutline&quot;&gt;
@@ -648,12 +661,10 @@ You’re in debt and turn to petty theft to scrape by. Eventually, you’re caug
   &lt;div class=&quot;progressText&quot;&gt;_args[0]&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="StoryCaption" tags="" position="741,398" size="100,100">&lt;h2&gt;Stats:&lt;/h2&gt;
-Evil score: $evil
-Good score: $good
 &lt;&lt;if $money &lt; -5000&gt;&gt;
 &lt;div style=&quot;color:red&quot;&gt;Money: $money&lt;/div&gt;
 &lt;&lt;elseif $money &lt; 5000&gt;&gt;
-&lt;div style=&quot;color:white&quot;&gt;Money: $money&lt;/div&gt;
+&lt;div style=&quot;color:black&quot;&gt;Money: $money&lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div style=&quot;color:green&quot;&gt;Money: $money&lt;/div&gt;
 &lt;&lt;endif&gt;&gt;
